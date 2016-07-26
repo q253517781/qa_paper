@@ -10,30 +10,7 @@
 \usepackage{epstopdf}
 %
 \begin{document}
-%
 
-\mainmatter              % start of the contributions
-%
-\title{An Approach for the Chinese Question-answer System based on Document}
-%
-\titlerunning{Chinese Question-answer System}  % abbreviated title (for running head)
-%                                     also used for the TOC unless
-%                                     \toctitle is used
-%
-\author{Benyou Wang\inst{1} \and Jiabing Niu\inst{1} \and Liqun Ma\inst{1} \and Lipeng Zhang\inst{1} \and Yuhua Zhang\inst{1}
-\and Peng Zhang\inst{1}}
-%
-\authorrunning{Benyou Wang et al.} % abbreviated author list (for running head)
-%
-%%%% list of authors for the TOC (use if author list has to be modified)
-\tocauthor{Benyou Wang, Jiabing Niu, Liqun Ma, Lipeng Zhang, Yuhua Zhang
-, and Peng Zhang}
-%
-\institute{%
-Tianjin Key Laboratory of Cognitive Computing and Application, School of Computer Science and Technology, Tianjin University, Tianjin, China\\
-% \and Computing and Communications Department, The Open University, United Kingdom \\
-% \and Department of Information Engineering, University of Padua, Italy
-}
 
 
 
@@ -83,19 +60,7 @@ We first segment the question and answer sentences into a series of characters a
 In Chinese grammer, different grammatical elements are usually distributed in different position in a sentence.For example, in a classic question, the entities concerned usually turn up in the front of a sentence, which follows the interrogatives like ,”什么？几个？多少？”.People have various speaking habits when they organize a sentence in Chinese.For instance, premises are more inclined to appear first in one sentence.So it is reasonable to consider keywords’ position message when we are trying to get the degree of how question and answer matches. We try to give different weights to keywords in different positions in a sentence.Meanwhile, weights may also be concerned with words’ idf values, which means the discrimination of words.
 
 
-\begin{figure}
-\centering
-\includegraphics[width=4in]{figures/character_position.eps}
-\caption{X axis refers to the position of the overlapped characters in question sentences. x=0 means that the overlapped character is on the front of  a sentence.x=100\% means the overlapped character is on the back of a sentence.Y axis means the occurrence frenquency of correct answers.}
-\label{fig:character_position}
-\end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=4in]{figures/word_position.eps}
-\caption{Similar to Fig. \ref{fig:character_position}, this figure shows the relationship between the position of the overlapped words in question sentences and the occurrence frenquency of correct answers.}
-\label{fig:word_position}
-\end{figure}
 
 
 First we segment the question and answer sentences into characters (words) and then count the overlapped characters(words) and their position in both questions and answers.It is obvious that the overlapped characters(words) which often appear on the back of one sentence tends to be more important for us to find out the correct answer among answer text sets. We can also conclude from the two figures above that keywords or characters are more likely to appear on the back of the question sentences. Thus, we should give them higher weight than the rest.
